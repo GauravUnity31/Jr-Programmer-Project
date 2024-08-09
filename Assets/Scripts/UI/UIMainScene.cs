@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class UIMainScene : MonoBehaviour
 {
@@ -20,7 +21,6 @@ public class UIMainScene : MonoBehaviour
 
     protected IUIInfoContent m_CurrentContent;
     protected List<Building.InventoryEntry> m_ContentBuffer = new List<Building.InventoryEntry>();
-
 
     private void Awake()
     {
@@ -73,4 +73,10 @@ public class UIMainScene : MonoBehaviour
             InfoPopup.Name.text = content.GetName();
         }
     }
+
+    public void BackToMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
 }
+
